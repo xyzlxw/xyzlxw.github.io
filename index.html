@@ -72,74 +72,11 @@
   <div class="article-inner">
     
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="使用Github和Hexo写博客"><a href="#使用Github和Hexo写博客" class="headerlink" title="使用Github和Hexo写博客"></a>使用Github和Hexo写博客</h1><p>开始写博客，写下创建此博客的过程。</p>
-<h2 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="http://nodejs.org" target="_blank" rel="noopener">Node.js</a></h2><p>安装64-bit版本，保持默认设置即可，使用命令<code>node -v</code>或<code>npm -v</code>检查安装是否正确。</p>
-<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装<a href="http://git-scm.com" target="_blank" rel="noopener">Git</a></h2><p>安装64-bit版本，保持默认设置即可，使用命令<code>git --version</code>检查安装是否正确。</p>
-<h2 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></h2><ul>
-<li>注册账号”yourname”</li>
-<li>创建仓库”yourname.github.io”</li>
-</ul>
-<h2 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h2><ul>
-<li><p>打开Git Bash, 生成SSH KEY</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C &quot;yourname@hotmail.com&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>打开文件id_rsa.pub，复制文件内容</p>
-</li>
-<li>登陆GitHub，点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
-<li>把你本地生成的密钥复制到里面(key文本框中)， 点击<code>add key</code></li>
-<li>测试配置是否成功 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="域名GoDaddy"><a href="#域名GoDaddy" class="headerlink" title="域名GoDaddy"></a>域名<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">GoDaddy</a></h2><ul>
-<li>购买域名”yoursite.com”</li>
-<li>点击你的账户，管理我的域名</li>
-<li>将GoDaddy的Nameservers更改成 f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net</li>
-</ul>
-<h2 id="配置DNSpod"><a href="#配置DNSpod" class="headerlink" title="配置DNSpod"></a>配置DNSpod</h2><ul>
-<li>注册</li>
-<li>添加配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   A     192.30.252.153</span><br><span class="line">@   A     192.30.252.154</span><br><span class="line">www CNAME yourname.github.io</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ cd d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ cd blog</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g # 或者hexo generate</span><br><span class="line">$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看</span><br></pre></td></tr></table></figure>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo g) #生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</span><br><span class="line">hexo server (hexo s) #启动本地web服务，用于博客的预览</span><br><span class="line">hexo deploy (hexo d) #部署播客到远端(比如github, heroku等平台)</span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br></pre></td></tr></table></figure>
-<h3 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n == hexo new</span><br><span class="line">$ hexo g == hexo generate</span><br><span class="line">$ hexo s == hexo server</span><br><span class="line">$ hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
-<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>部署到github，需要在配置文件_config.xml中作如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">url: http://yoursite.com</span><br><span class="line">...</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>然后在命令行中执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<h3 id="使用git命令行部署"><a href="#使用git命令行部署" class="headerlink" title="使用git命令行部署"></a>使用git命令行部署</h3><p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd d:/hexo/blog</span><br><span class="line">$ git clone https://github.com/yourname/yourname.github.io.git .deploy/yourname.github.io</span><br></pre></td></tr></table></figure></p>
-<p>创建一个deploy脚本文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">cp -R public/* .deploy/yourname.github.io</span><br><span class="line">cd .deploy/yourname.github.io</span><br><span class="line">git add .</span><br><span class="line">git commit -m “update”</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
-<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>进入source目录下，添加CNAME文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yoursite.com</span><br></pre></td></tr></table></figure></p>
-<p>执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lixueon.com/2018/04/19/github-hexo-blog/" data-id="cjg608ls20000fskresuhg04e" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/19/hello-world/" class="article-date">
-  <time datetime="2018-04-18T23:36:11.262Z" itemprop="datePublished">2018-04-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/19/hello-world/">Hello World</a>
+      <a class="article-title" href="/2018/04/19/github-hexo-blog/">使用GitHub和Hexo写博客</a>
     </h1>
   
 
@@ -147,20 +84,48 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <p>开始写博客，写下创建此博客的过程。</p>
+<h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="http://nodejs.org" target="_blank" rel="noopener">Node.js</a></h1><p>安装64-bit版本，保持默认设置即可，使用命令<code>node -v</code>或<code>npm -v</code>检查安装是否正确。</p>
+<h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装<a href="http://git-scm.com" target="_blank" rel="noopener">Git</a></h1><p>安装64-bit版本，保持默认设置即可，使用命令<code>git --version</code>检查安装是否正确。</p>
+<h1 id="配置GitHub"><a href="#配置GitHub" class="headerlink" title="配置GitHub"></a>配置<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></h1><ul>
+<li>注册账号”yourname”</li>
+<li>创建仓库”yourname.github.io”</li>
+</ul>
+<h1 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h1><ul>
+<li><p>打开Git Bash, 生成SSH KEY</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"yourname@hotmail.com"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>打开文件id_rsa.pub，复制文件内容</p>
+</li>
+<li>登陆GitHub，点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
+<li>把你本地生成的密钥复制到里面(key文本框中)， 点击<code>add key</code></li>
+<li>测试配置是否成功 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="域名GoDaddy"><a href="#域名GoDaddy" class="headerlink" title="域名GoDaddy"></a>域名<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">GoDaddy</a></h1><ul>
+<li>购买域名”yoursite.com”</li>
+<li>点击你的账户，管理我的域名</li>
+<li>将GoDaddy的Nameservers更改成 f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net</li>
+</ul>
+<h1 id="配置DNSpod"><a href="#配置DNSpod" class="headerlink" title="配置DNSpod"></a>配置DNSpod</h1><ul>
+<li>注册</li>
+<li>添加配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   A     192.30.252.153</span><br><span class="line">@   A     192.30.252.154</span><br><span class="line">www CNAME yourname.github.io</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g <span class="comment"># 或者hexo generate</span></span><br><span class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo g) #生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</span><br><span class="line">hexo server (hexo s) #启动本地web服务，用于博客的预览</span><br><span class="line">hexo deploy (hexo d) #部署播客到远端(比如github, heroku等平台)</span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br></pre></td></tr></table></figure>
+<h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n == hexo new</span><br><span class="line">$ hexo g == hexo generate</span><br><span class="line">$ hexo s == hexo server</span><br><span class="line">$ hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>部署到github，需要在配置文件_config.xml中作如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">url: http://yoursite.com</span><br><span class="line">...</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>然后在命令行中执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用git命令行部署"><a href="#使用git命令行部署" class="headerlink" title="使用git命令行部署"></a>使用git命令行部署</h2><p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo/blog</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/yourname/yourname.github.io.git .deploy/yourname.github.io</span><br></pre></td></tr></table></figure></p>
+<p>创建一个deploy脚本文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">cp -R public/* .deploy/yourname.github.io</span><br><span class="line">cd .deploy/yourname.github.io</span><br><span class="line">git add .</span><br><span class="line">git commit -m “update”</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>进入source目录下，添加CNAME文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yoursite.com</span><br></pre></td></tr></table></figure></p>
+<p>执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lixueon.com/2018/04/19/hello-world/" data-id="cjg608lsd0001fskr5lppd8wy" class="article-share-link">Share</a>
+      <a data-url="http://lixueon.com/2018/04/19/github-hexo-blog/" data-id="cjg60pgn4000064kr7c52pmtq" class="article-share-link">Share</a>
       
       
     </footer>
@@ -201,11 +166,7 @@
       <ul>
         
           <li>
-            <a href="/2018/04/19/github-hexo-blog/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/19/hello-world/">Hello World</a>
+            <a href="/2018/04/19/github-hexo-blog/">使用GitHub和Hexo写博客</a>
           </li>
         
       </ul>
