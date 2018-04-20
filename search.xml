@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[关于 Notepad++]]></title>
+    <url>%2F2018%2F04%2F19%2Fnotepadplusplus-tips%2F</url>
+    <content type="text"><![CDATA[本文整理 Notepad++ 相关技巧 插件 MarkdownViewerPlusPlusDownload a release version and copy the included MarkdownViewerPlusPlus.dll tothe plugins sub-folder at your Notepad++ installation directory. The pluginadds a small Markdown icon Markdown icon to the toolbar to toggle the vieweras dockable panel.]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[使用GitHub和Hexo写博客]]></title>
+    <url>%2F2018%2F04%2F19%2Fgithub-hexo-blog%2F</url>
+    <content type="text"><![CDATA[本文记录创建此博客的过程。 安装Node.js安装64-bit版本，保持默认设置即可，使用命令node -v或npm -v检查安装是否正确。 安装Git安装64-bit版本，保持默认设置即可，使用命令git --version检查安装是否正确。 配置GitHub 注册账号”yourname” 创建仓库”yourname.github.io” 配置SSH keys 打开Git Bash, 生成SSH KEY 12$ cd ~/.ssh$ ssh-keygen -t rsa -C "yourname@hotmail.com" 打开文件id_rsa.pub，复制文件内容 登陆GitHub，点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys 把你本地生成的密钥复制到里面(key文本框中)， 点击add key 测试配置是否成功 1$ ssh -T git@GitHub.com 域名GoDaddy 购买域名”yoursite.com” 点击你的账户，管理我的域名 将GoDaddy的Nameservers更改成 f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net 配置DNSpod 注册 添加配置123* A 192.30.252.153@ A 192.30.252.154www CNAME yourname.github.io 生成和发布 Hexo安装12345678$ cd d:/hexo$ npm install hexo-cli -g$ hexo init blog$ cd blog$ npm install$ npm install hexo-deployer-git --save$ hexo g # 或者hexo generate$ hexo s # 或者hexo server，可以在http://localhost:4000/ 查看 常用命令12345hexo generate (hexo g) #生成静态文件，会在当前目录下生成一个新的叫做public的文件夹hexo server (hexo s) #启动本地web服务，用于博客的预览hexo deploy (hexo d) #部署播客到远端(比如github, heroku等平台)hexo new &quot;postName&quot; #新建文章hexo new page &quot;pageName&quot; #新建页面 常用简写1234$ hexo n == hexo new$ hexo g == hexo generate$ hexo s == hexo server$ hexo d == hexo deploy 部署部署到github，需要在配置文件_config.yml中作如下修改：123456url: http://yoursite.com...deploy: type: git repo: git@github.com:yourname/yourname.github.io.git branch: master 然后在命令行中执行1$ hexo d 测试yml可以使用YAML Lint 使用git命令行部署将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码12$ cd d:/hexo/blog$ git clone https://github.com/yourname/yourname.github.io.git .deploy/yourname.github.io 创建一个deploy脚本文件123456hexo gcp -R public/* .deploy/yourname.github.iocd .deploy/yourname.github.iogit add .git commit -m “update”git push origin master 添加CNAME文件在source目录下创建CNAME文件，文件内容是1yoursite.com 执行命令12$ hexo g$ hexo d 更换主题这里以主题yilia为例进行说明。 安装主题 12$ hexo clean$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia 启用主题修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为yilia。更新主题 1234$ cd themes/yilia$ git pull$ hexo g$ hexo s]]></content>
+  </entry>
+</search>
