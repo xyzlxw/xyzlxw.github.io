@@ -1,92 +1,129 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="utf-8">
   
+  <title>使用GitHub和Hexo写博客 | 外大武的博客</title>
+  <meta name="author" content="外大武">
+  
+  <meta name="description" content="每天进步一点点">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用GitHub和Hexo写博客"/>
+  <meta property="og:site_name" content="外大武的博客"/>
 
   
-  <title>使用GitHub和Hexo写博客 | 外大武的博客</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文记录创建此博客的过程。 安装Node.js安装64-bit版本，保持默认设置即可，使用命令node -v或npm -v检查安装是否正确。 安装Git安装64-bit版本，保持默认设置即可，使用命令git --version检查安装是否正确。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="使用GitHub和Hexo写博客">
-<meta property="og:url" content="http://lixueon.com/2018/04/19/github-hexo-blog/index.html">
-<meta property="og:site_name" content="外大武的博客">
-<meta property="og:description" content="本文记录创建此博客的过程。 安装Node.js安装64-bit版本，保持默认设置即可，使用命令node -v或npm -v检查安装是否正确。 安装Git安装64-bit版本，保持默认设置即可，使用命令git --version检查安装是否正确。">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T13:18:38.254Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用GitHub和Hexo写博客">
-<meta name="twitter:description" content="本文记录创建此博客的过程。 安装Node.js安装64-bit版本，保持默认设置即可，使用命令node -v或npm -v检查安装是否正确。 安装Git安装64-bit版本，保持默认设置即可，使用命令git --version检查安装是否正确。">
+    <meta property="og:image" content=""/>
   
-    <link rel="alternate" href="/atom.xml" title="外大武的博客" type="application/atom+xml">
+
   
   
-    <link rel="icon" href="/favicon.png">
+    <link href="/favicon.png" rel="icon">
   
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/themes/cerulean.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight-default.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/comment.css" media="screen" type="text/css">
+  <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.7/es5-sham.min.js"></script>
+  <![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <script src="/js/marked.js"></script>
+    <script src="/js/comment.js"></script>
+    <script src="/js/timeago.min.js"></script>
+    <script src="/js/highlight.min.js"></script>
+	<script src="/js/spin.min.js"></script>
   
-  <link rel="stylesheet" href="/css/style.css">
+  <!-- analytics -->
+  
+
+
+
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">外大武的博客</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lixueon.com"></form>
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <a class="navbar-brand" href="/">外大武的博客</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class="fa fa-user"></i>About
+			</a>
+		  </li>
+		  
+		</ul>
       </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-github-hexo-blog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/04/19/github-hexo-blog/" class="article-date">
-  <time datetime="2018-04-19T01:56:03.394Z" itemprop="datePublished">2018-04-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      使用GitHub和Hexo写博客
-    </h1>
-  
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>本文记录创建此博客的过程。</p>
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header page-header-inverse ">		
+			<h1 class="title title-inverse "> 使用GitHub和Hexo写博客</h1>
+		</div>		
+	
+
+
+
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>本文记录创建此博客的过程。</p>
 <h1 id="安装Node-js"><a href="#安装Node-js" class="headerlink" title="安装Node.js"></a>安装<a href="http://nodejs.org" target="_blank" rel="noopener">Node.js</a></h1><p>安装64-bit版本，保持默认设置即可，使用命令<code>node -v</code>或<code>npm -v</code>检查安装是否正确。</p>
 <h1 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装<a href="http://git-scm.com" target="_blank" rel="noopener">Git</a></h1><p>安装64-bit版本，保持默认设置即可，使用命令<code>git --version</code>检查安装是否正确。</p>
 <a id="more"></a>
@@ -96,13 +133,13 @@
 </ul>
 <h1 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h1><ul>
 <li><p>打开Git Bash, 生成SSH KEY</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"yourname@hotmail.com"</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"yourname@hotmail.com"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>打开文件id_rsa.pub，复制文件内容</p>
 </li>
 <li>登陆GitHub，点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
 <li>把你本地生成的密钥复制到里面(key文本框中)， 点击<code>add key</code></li>
-<li>测试配置是否成功 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com</span><br></pre></td></tr></table></figure>
+<li>测试配置是否成功 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h1 id="域名GoDaddy"><a href="#域名GoDaddy" class="headerlink" title="域名GoDaddy"></a>域名<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">GoDaddy</a></h1><ul>
@@ -112,130 +149,205 @@
 </ul>
 <h1 id="配置DNSpod"><a href="#配置DNSpod" class="headerlink" title="配置DNSpod"></a>配置<a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSpod</a></h1><ul>
 <li>注册</li>
-<li>添加配置<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*   A     192.30.252.153</span><br><span class="line">@   A     192.30.252.154</span><br><span class="line">www CNAME yourname.github.io</span><br></pre></td></tr></table></figure>
+<li>添加配置<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*   A     192.30.252.153</span><br><span class="line">@   A     192.30.252.154</span><br><span class="line">www CNAME yourname.github.io</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h1 id="生成和发布-Hexo"><a href="#生成和发布-Hexo" class="headerlink" title="生成和发布 Hexo"></a>生成和发布 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g <span class="comment"># 或者hexo generate</span></span><br><span class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></span><br></pre></td></tr></table></figure>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo generate (hexo g) #生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</span><br><span class="line">hexo server (hexo s) #启动本地web服务，用于博客的预览</span><br><span class="line">hexo deploy (hexo d) #部署播客到远端(比如github, heroku等平台)</span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br></pre></td></tr></table></figure>
-<h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ hexo n == hexo new</span><br><span class="line">$ hexo g == hexo generate</span><br><span class="line">$ hexo s == hexo server</span><br><span class="line">$ hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
-<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>部署到github，需要在配置文件_config.yml中作如下修改：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">url: http://yoursite.com</span><br><span class="line">...</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>然后在命令行中执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<h1 id="生成和发布-Hexo"><a href="#生成和发布-Hexo" class="headerlink" title="生成和发布 Hexo"></a>生成和发布 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g <span class="comment"># 或者hexo generate</span></span><br><span class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></span><br></pre></td></tr></table></figure>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate (hexo g) #生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</span><br><span class="line">hexo server (hexo s) #启动本地web服务，用于博客的预览</span><br><span class="line">hexo deploy (hexo d) #部署播客到远端(比如github, heroku等平台)</span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br></pre></td></tr></table></figure>
+<h2 id="常用简写"><a href="#常用简写" class="headerlink" title="常用简写"></a>常用简写</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo n == hexo new</span><br><span class="line">$ hexo g == hexo generate</span><br><span class="line">$ hexo s == hexo server</span><br><span class="line">$ hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>部署到github，需要在配置文件_config.yml中作如下修改：<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">url: http://yoursite.com</span><br><span class="line">...</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
+<p>然后在命令行中执行<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 <p>测试yml可以使用<a href="http://www.yamllint.com/" target="_blank" rel="noopener">YAML Lint</a></p>
-<h2 id="使用git命令行部署"><a href="#使用git命令行部署" class="headerlink" title="使用git命令行部署"></a>使用git命令行部署</h2><p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo/blog</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/yourname/yourname.github.io.git .deploy/yourname.github.io</span><br></pre></td></tr></table></figure></p>
-<p>创建一个deploy脚本文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">cp -R public/* .deploy/yourname.github.io</span><br><span class="line">cd .deploy/yourname.github.io</span><br><span class="line">git add .</span><br><span class="line">git commit -m “update”</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
-<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在source目录下创建CNAME文件，文件内容是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yoursite.com</span><br></pre></td></tr></table></figure></p>
-<p>执行命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用git命令行部署"><a href="#使用git命令行部署" class="headerlink" title="使用git命令行部署"></a>使用git命令行部署</h2><p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo/blog</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/yourname/yourname.github.io.git .deploy/yourname.github.io</span><br></pre></td></tr></table></figure></p>
+<p>创建一个deploy脚本文件<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">cp -R public/* .deploy/yourname.github.io</span><br><span class="line">cd .deploy/yourname.github.io</span><br><span class="line">git add .</span><br><span class="line">git commit -m “update”</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加CNAME文件"><a href="#添加CNAME文件" class="headerlink" title="添加CNAME文件"></a>添加CNAME文件</h2><p>在source目录下创建CNAME文件，文件内容是<br><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yoursite.com</span><br></pre></td></tr></table></figure></p>
+<p>执行命令<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 <h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><p>这里以主题yilia为例进行说明。</p>
 <ul>
 <li><p>安装主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>启用主题<br>修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为yilia。<br>更新主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ cd themes/yilia</span><br><span class="line">$ git pull</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd themes/yilia</span><br><span class="line">$ git pull</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+	  
+	</div>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lixueon.com/2018/04/19/github-hexo-blog/" data-id="cjg82bl400000ykkrqtjud3d0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
+	<!-- recommended posts -->
+	
+
+	<div>
+  	<center>
+	<div class="pagination">
+<ul class="pagination">
+	 
+				
+    	<li class="prev"><a href="/2018/04/19/notepadplusplus-tips/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+          <li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
+</ul>
+</div>
+
+    </center>
+	</div>
+
+    <!-- share -->
     
-<nav id="article-nav">
-  
-    <a href="/2018/04/19/notepadplusplus-tips/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
         
-          关于 Notepad++
+    <div class="bdsharebuttonbox">
+        <a href="#" class="bds_more" data-cmd="more"></a>
+        <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+        <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+        <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+        <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+        <a href="#" class="bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+        <a href="#" class="bds_evernotecn" data-cmd="evernotecn" title="分享到印象笔记"></a>
+        <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
+        <a href="#" class="bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+    </div>
+    <script>
+        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"24"},"share":{}};
+        with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+
+
         
-      </div>
-    </a>
-  
-  
-</nav>
 
+    
+	
+	<!-- comment -->
+	
+<section id="comment">
+  <h2 class="title">Comments</h2>
+    	 
+	 <div id="comment-thread"></div>
+	 <div id="loading-spin"></div>
+	 <script type="text/javascript">
+	   getComments({
+           type: "Github" ? "Github" : "github",       
+	       user: "xyzlxw",
+	       repo: "gitment-comments",
+		   client_id: "71d491de144828fccd35",
+           client_secret: "5b00b7e004354b097ac12dadee6786cf2939eee3",
+		   no_comment: "No comments yet. Press the button and go to comment now!",
+		   go_to_comment: "Go to comment",
+		   no_issue: "no_issue",
+		   issue_title: "使用GitHub和Hexo写博客",
+		   issue_id: "",
+		   btn_class: "btn btn-primary",
+		   comments_target: "#comment-thread",
+		   loading_target: "#loading_spin"
+		   });
+	 </script>
   
-</article>
-
 </section>
-        
-          <aside id="sidebar">
-  
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2018-04-19 
+	</div>
+	
+
+	<!-- categories -->
     
 
-  
-    
+	<!-- tags -->
+	
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li></ul>
-    </div>
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
   </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2018 外大武
+  
+      with help from <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="http://getbootstrap.com/" target="_blank">Twitter Bootstrap</a>. Theme by <a href="http://github.com/wzpan/hexo-theme-freemind/">Freemind</a>.    
+</p> </footer>
+</div> <!-- container-narrow -->
+  
 
 
   
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2018/04/19/notepadplusplus-tips/">关于 Notepad++</a>
-          </li>
-        
-          <li>
-            <a href="/2018/04/19/github-hexo-blog/">使用GitHub和Hexo写博客</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+<a id="gotop" href="#">   
+  <span>▲</span> 
+</a>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 外大武<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
 
 
 
-  </div>
+   <script type="text/javascript">      
+     var search_path = "search.xml";
+	 if (search_path.length == 0) {
+	 	search_path = "search.xml";
+	 }
+	 var path = "/" + search_path;
+     searchFunc(path, 'local-search-input', 'local-search-result');
+   </script>
+
+
+<!-- syntax highlighting -->
+
+  <script>
+  marked.setOptions({
+    highlight: function (code, lang) {
+        return hljs.highlightAuto(code).value;
+    }
+  });
+  function Highlighting(){
+    var markdowns = document.getElementsByClassName('markdown');
+    for(var i=0;i<markdowns.length;i++){
+        if(markdowns[i].innerHTML) markdowns[i].innerHTML =marked(markdowns[i].innerHTML);
+    }
+  }
+  window.addEventListener('DOMContentLoaded', Highlighting, false);
+  window.addEventListener('load', Highlighting, false);
+  </script>
+
+
 </body>
-</html>
+   </html>
