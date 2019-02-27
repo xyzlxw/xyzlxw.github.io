@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>使用GitHub和Hexo写博客 | 外大武的博客</title>
+  <title>基金005644 | 外大武的博客</title>
   <meta name="author" content="外大武">
   
-  <meta name="description" content="本文使用GitHub Pages和Hexo创建博客。">
+  <meta name="description" content="本文研究基金 “广发沪港深龙头混合 (005644)” 在2018年净值减少的原因。">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="使用GitHub和Hexo写博客"/>
+  <meta property="og:title" content="基金005644"/>
   <meta property="og:site_name" content="外大武的博客"/>
 
   
@@ -103,7 +103,7 @@
 
 	
 		<div class="page-header page-header-inverse ">		
-			<h1 class="title title-inverse "> 使用GitHub和Hexo写博客</h1>
+			<h1 class="title title-inverse "> 基金005644</h1>
 		</div>		
 	
 
@@ -123,59 +123,24 @@
 	<div class="mypage">		
 	  		
 
-	  <p>本文使用GitHub Pages和Hexo创建博客。 <a id="more"></a></p>
-<h3 id="安装node.js">安装<a href="http://nodejs.org" target="_blank" rel="noopener">Node.js</a></h3>
-<p>安装64-bit版本，保持默认设置即可，使用命令<code>node -v</code>或<code>npm -v</code>检查安装是否正确。</p>
-<h3 id="安装git">安装<a href="http://git-scm.com" target="_blank" rel="noopener">Git</a></h3>
-<p>安装64-bit版本，保持默认设置即可，使用命令<code>git --version</code>检查安装是否正确。</p>
-<h3 id="配置github">配置<a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></h3>
+	  <p>本文研究基金 “广发沪港深龙头混合 (005644)” 在2018年净值减少的原因。 <a id="more"></a></p>
+<p>2018年初，看着基金名字”沪港深龙头“就买入了基金005644，然后就悲剧了，基金从2018年 3月21日开始交易后，净值一路走低，截至到四季度时亏15%，它成为2018年最失败的投资。</p>
+<p>此此基金可同时交易深沪港的股票，研究后却发现此基金只交易港股，并未买卖深沪的股票， 所以深沪股市大涨，此基金却依旧巨亏，尤其麻烦的是基金经理貌似缺乏投资港股的经验， 一味追涨杀跌，搞不懂基金经理为啥不是价值投资？这操作同散户没任何区别，咋盈利？</p>
+<p>根据基金的<a href="http://fundf10.eastmoney.com/ccmx_005644.html" target="_blank" rel="noopener">持仓信息</a>，制作下表模拟基金的行为：</p>
+<div>
+<p><img src="/images/fund-005644-2018.PNG" alt="005644持仓分析"></p>
+</div>
+<p>其中:</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">季度均价 = (当季度内最高收盘价 + 当季度内最低收盘价) / 2</span><br></pre></td></tr></table></figure>
+<p>无法通过持仓而准确知道买入和卖出股票的价格和数量，但它可充分反映投资过程，由于 二季度末时股票资金总额约250亿元，截至到2018年末亏损总额为约36.4亿元，因此：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">盈余率 = 1 - （36.4/250） = 0.856</span><br></pre></td></tr></table></figure>
+<p>这个结果匹配2018年末的基金净值0.8439，所以净值减少的原因就是炒股亏了。</p>
+<p>总之，失败不总是坏事，至少得到如下经验：</p>
 <ul>
-<li>注册账号“yourname”</li>
-<li>创建仓库“yourname.github.io”</li>
-</ul>
-<h3 id="配置ssh-keys">配置SSH keys</h3>
-<ul>
-<li><p>打开Git Bash, 生成SSH KEY <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br><span class="line">$ ssh-keygen -t rsa -C <span class="string">"yourname@hotmail.com"</span></span><br></pre></td></tr></table></figure></p></li>
-<li>打开文件id_rsa.pub，复制文件内容</li>
-<li>登陆GitHub，点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
-<li>把你本地生成的密钥复制到里面(key文本框中)， 点击<code>add key</code></li>
-<li><p>测试配置是否成功 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@GitHub.com</span><br></pre></td></tr></table></figure></p></li>
-</ul>
-<h3 id="域名godaddy">域名<a href="https://sg.godaddy.com/zh/" target="_blank" rel="noopener">GoDaddy</a></h3>
-<ul>
-<li>购买域名“yoursite.com”</li>
-<li>点击你的账户，管理我的域名</li>
-<li>将GoDaddy的Nameservers更改成 f1g1ns1.dnspod.net 和 f1g1ns2.dnspod.net</li>
-</ul>
-<h3 id="配置dnspod">配置<a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSpod</a></h3>
-<ul>
-<li>注册</li>
-<li>添加配置 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">*   A     192.30.252.153</span><br><span class="line">@   A     192.30.252.154</span><br><span class="line">www CNAME yourname.github.io</span><br></pre></td></tr></table></figure></li>
-</ul>
-<h3 id="生成和发布-hexo">生成和发布 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></h3>
-<h4 id="安装">安装</h4>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo</span><br><span class="line">$ npm install hexo-cli -g</span><br><span class="line">$ hexo init blog</span><br><span class="line">$ <span class="built_in">cd</span> blog</span><br><span class="line">$ npm install</span><br><span class="line">$ npm install hexo-deployer-git --save</span><br><span class="line">$ hexo g <span class="comment"># 或者hexo generate</span></span><br><span class="line">$ hexo s <span class="comment"># 或者hexo server，可以在http://localhost:4000/ 查看</span></span><br></pre></td></tr></table></figure>
-<h4 id="常用命令">常用命令</h4>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate (hexo g) #生成静态文件，会在当前目录下生成一个新的叫做public的文件夹</span><br><span class="line">hexo server (hexo s) #启动本地web服务，用于博客的预览</span><br><span class="line">hexo deploy (hexo d) #部署播客到远端(比如github, heroku等平台)</span><br><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br></pre></td></tr></table></figure>
-<h4 id="常用简写">常用简写</h4>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo n == hexo new</span><br><span class="line">$ hexo g == hexo generate</span><br><span class="line">$ hexo s == hexo server</span><br><span class="line">$ hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
-<h4 id="部署">部署</h4>
-<p>部署到github，需要在配置文件_config.yml中作如下修改： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">url: http://yoursite.com</span><br><span class="line">...</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:yourname/yourname.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>然后在命令行中执行 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
-<p>测试yml可以使用<a href="http://www.yamllint.com/" target="_blank" rel="noopener">YAML Lint</a></p>
-<h4 id="使用git命令行部署">使用git命令行部署</h4>
-<p>将我们之前创建的repo克隆到本地，新建一个目录叫做.deploy用于存放克隆的代码 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> d:/hexo/blog</span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/yourname/yourname.github.io.git .deploy/yourname.github.io</span><br></pre></td></tr></table></figure></p>
-<p>创建一个deploy脚本文件 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">cp -R public/* .deploy/yourname.github.io</span><br><span class="line">cd .deploy/yourname.github.io</span><br><span class="line">git add .</span><br><span class="line">git commit -m “update”</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure></p>
-<h3 id="添加域名的cname文件">添加域名的CNAME文件</h3>
-<p>在source目录下创建CNAME文件，文件内容是 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">yoursite.com</span><br></pre></td></tr></table></figure></p>
-<h3 id="更换hexo主题">更换Hexo主题</h3>
-<p>首先下载主题freemind： <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ git clone https://github.com/wzpan/hexo-theme-freemind.git themes/freemind</span><br></pre></td></tr></table></figure></p>
-<p>然后修改Hexo目录下的_config.yml配置文件中的theme属性，将其设置为freemind <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">theme: freemind</span><br></pre></td></tr></table></figure></p>
-<p>最后更新主题 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd themes/freemind</span><br><span class="line">$ git pull</span><br></pre></td></tr></table></figure></p>
-<h3 id="支持latex">支持LaTex</h3>
-<ul>
-<li>安装<a href="http://www.pandoc.org/installing.html" target="_blank" rel="noopener">Pandoc</a></li>
-<li>卸载hexo默认的marked, 然后安装pandoc <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-renderer-mathjax --save</span><br><span class="line">$ npm uninstall hexo-renderer-marked --save</span><br><span class="line">$ npm install hexo-renderer-pandoc --save</span><br></pre></td></tr></table></figure></li>
+<li>买基金前，必须要先仔细看说明，关注基金经理过往战绩，不要找小白，专业的事情 要交给专业并优秀的人去做，找那些赚佣金的同时兼顾客户利益的基金经理。</li>
+<li>购买基金时，必须分批投入，风险至上，及时止损。</li>
+<li>购买基金后，不要幻想坐等收钱，必须定时跟踪基金状态，买龙头股也不一定会盈利， 即使专业的人去操作也不一定。</li>
+<li>股票投资要严守纪律，严格止损。</li>
 </ul>
 	  
 	</div>
@@ -188,14 +153,14 @@
 	<div class="pagination">
 <ul class="pagination">
 	 
-				
-    	<li class="prev"><a href="/2018/04/22/notepadplusplus-plugin/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-          <li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2018/08/29/DesignPattern-Singleton/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>         
         
 	
 </ul>
@@ -245,7 +210,7 @@
 		   no_comment: "No comments yet. Press the button and go to comment now!",
 		   go_to_comment: "Go to comment",
 		   no_issue: "no_issue",
-		   issue_title: "使用GitHub和Hexo写博客",
+		   issue_title: "基金005644",
 		   issue_id: "",
 		   btn_class: "btn btn-primary",
 		   comments_target: "#comment-thread",
@@ -266,14 +231,33 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2018-04-22 
+	2019-02-27 
 	</div>
 	
 
 	<!-- categories -->
     
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/stocks/">stocks<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/finance/">finance<span>2</span></a></li>
+    </ul>
+	</div>
 	
 
 	<!-- toc -->
