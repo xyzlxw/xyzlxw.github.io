@@ -132,14 +132,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Notepad++常用插件</title>
-    <url>/2018/04/22/notepadplusplus-plugin/</url>
-    <content><![CDATA[<p>本文整理 Notepad++ 相关技巧 <a id="more"></a></p>
-<h1 id="插件-markdownviewerplusplus">插件 <a href="https://github.com/nea/MarkdownViewerPlusPlus" target="_blank" rel="noopener">MarkdownViewerPlusPlus</a></h1>
-<p>Download a release version and copy the included MarkdownViewerPlusPlus.dll to the plugins sub-folder at your Notepad++ installation directory. The plugin adds a small Markdown icon Markdown icon to the toolbar to toggle the viewer as dockable panel.</p>
-]]></content>
-  </entry>
-  <entry>
     <title>基金005644</title>
     <url>/2019/02/27/Fund-005644-2018/</url>
     <content><![CDATA[<p>本文研究基金 “广发沪港深龙头混合 (005644)” 在2018年净值减少的原因。 <a id="more"></a></p>
@@ -279,6 +271,14 @@
       <tags>
         <tag>python</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Notepad++常用插件</title>
+    <url>/2018/04/22/notepadplusplus-plugin/</url>
+    <content><![CDATA[<p>本文整理 Notepad++ 相关技巧 <a id="more"></a></p>
+<h1 id="插件-markdownviewerplusplus">插件 <a href="https://github.com/nea/MarkdownViewerPlusPlus" target="_blank" rel="noopener">MarkdownViewerPlusPlus</a></h1>
+<p>Download a release version and copy the included MarkdownViewerPlusPlus.dll to the plugins sub-folder at your Notepad++ installation directory. The plugin adds a small Markdown icon Markdown icon to the toolbar to toggle the viewer as dockable panel.</p>
+]]></content>
   </entry>
   <entry>
     <title>使用GitHub和Hexo写博客</title>
@@ -453,9 +453,9 @@
       </tags>
   </entry>
   <entry>
-    <title>诗经.周南.关雎</title>
+    <title>诗经.关雎</title>
     <url>/2020/05/31/ShiJing-GuanJu/</url>
-    <content><![CDATA[<p>关雎是诗经的第一篇，解读很多，个人愿相信它在描写男女思恋，而非女德。 <a id="more"></a></p>
+    <content><![CDATA[<p>关雎，由于孔子选择它为诗经首篇，解读很多，个人愿相信它在描写男女思恋，而非女德。 <a id="more"></a></p>
 <h3 id="关雎">关雎</h3>
 <p>关关雎鸠，在河之洲，窈窕淑女，君子好逑。 参差荇菜，左右流之，窈窕淑女，寤寐求之， 求之不得，寤寐思服，悠哉悠哉，辗转反侧。 参差荇菜，左右采之，窈窕淑女，琴瑟友之。 参差荇菜，左右芼之，窈窕淑女，钟鼓乐之。</p>
 <h4 id="注解">注解</h4>
