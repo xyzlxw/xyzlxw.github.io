@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Python 代码规范 | 外大武的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="本文有关于Python的编码规范，以确立统一代码风格和样式，方便阅读和维护。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 代码规范">
+<meta property="og:url" content="https://xyzlxw.github.io/2026/04/15/PythonStyleGuide/index.html">
+<meta property="og:site_name" content="外大武的博客">
+<meta property="og:description" content="本文有关于Python的编码规范，以确立统一代码风格和样式，方便阅读和维护。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-04-15T05:44:15.412Z">
+<meta property="article:modified_time" content="2026-04-15T05:44:15.414Z">
+<meta property="article:author" content="外大武">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="外大武的博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">外大武的博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xyzlxw.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-PythonStyleGuide" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/04/15/PythonStyleGuide/" class="article-date">
+  <time class="dt-published" datetime="2026-04-15T05:44:15.412Z" itemprop="datePublished">2026-04-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/document/">document</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Python 代码规范
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>本文有关于Python的编码规范，以确立统一代码风格和样式，方便阅读和维护。</p>
+<span id="more"></span>
+
+<h2 id="代码格式"><a href="#代码格式" class="headerlink" title="代码格式"></a>代码格式</h2><h3 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h3><p>统一使用4个空格进行缩进</p>
+<h3 id="行宽"><a href="#行宽" class="headerlink" title="行宽"></a>行宽</h3><p>每行代码尽量不超过 80 个字符(在特殊情况下可以略微超过 80 ，但最长不得超过 120)<br>理由：</p>
+<ul>
+<li>这在查看 side-by-side 的 diff 时很有帮助</li>
+<li>方便在控制台下查看代码</li>
+<li>太长可能是设计有缺陷</li>
+</ul>
+<h3 id="引号"><a href="#引号" class="headerlink" title="引号"></a>引号</h3><p>简单说，自然语言使用双引号，机器标示使用单引号，因此代码里多数应该使用 单引号</p>
+<ul>
+<li>自然语言 使用双引号 “…”<br>例如错误信息；很多情况还是 unicode，使用u”你好世界”</li>
+<li>机器标识 使用单引号 ‘…’<br>例如 dict 里的 key</li>
+<li>正则表达式 使用原生的双引号 r”…”<br>文档字符串 (docstring) 使用三个双引号 “””……”””</li>
+</ul>
+<h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><ul>
+<li>模块级函数和类定义之间空两行；</li>
+<li>类成员函数之间空一行；<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class A:</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    def hello(self):</span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">def main():</span><br><span class="line">    pass  </span><br></pre></td></tr></table></figure></li>
+<li>可以使用多个空行分隔多组相关的函数</li>
+<li>函数中可以使用空行分隔出逻辑相关的代码</li>
+</ul>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><ul>
+<li>如无特殊情况, 文件一律使用 UTF-8 编码</li>
+<li>如无特殊情况, 文件头部必须加入#-<em>-coding:utf-8-</em>-标识</li>
+</ul>
+<h3 id="import语句"><a href="#import语句" class="headerlink" title="import语句"></a>import语句</h3><ul>
+<li>import 语句应该分行书写<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">import sys,os</span><br><span class="line"></span><br><span class="line"># 正确的写法</span><br><span class="line">from subprocess import Popen, PIPE</span><br></pre></td></tr></table></figure></li>
+<li>import语句应该使用 absolute import<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">from foo.bar import Bar</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">from ..bar import Bar</span><br></pre></td></tr></table></figure></li>
+<li>import语句应该放在文件头部，置于模块说明及docstring之后，于全局变量之前；</li>
+<li>import语句应该按照顺序排列，每组之间用一个空行分隔<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import sys</span><br><span class="line"></span><br><span class="line">import msgpack</span><br><span class="line">import zmq</span><br><span class="line"></span><br><span class="line">import foo</span><br></pre></td></tr></table></figure></li>
+<li>导入其他模块的类定义时，可以使用相对导入<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">from myclass import MyClass</span><br></pre></td></tr></table></figure></li>
+<li>如果发生命名冲突，则可使用命名空间<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import bar</span><br><span class="line">import foo.bar</span><br><span class="line"></span><br><span class="line">bar.Bar()</span><br><span class="line">foo.bar.Bar()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h3><ul>
+<li>在二元运算符两边各空一格[&#x3D;,-,+&#x3D;,&#x3D;&#x3D;,&gt;,in,is not, and]:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">i = i + 1</span><br><span class="line">submitted += 1</span><br><span class="line">x = x * 2 - 1</span><br><span class="line">hypot2 = x * x + y * y</span><br><span class="line">c = (a + b) * (a - b)</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">i=i+1</span><br><span class="line">submitted +=1</span><br><span class="line">x = x*2 - 1</span><br><span class="line">hypot2 = x*x + y*y</span><br><span class="line">c = (a+b) * (a-b)</span><br></pre></td></tr></table></figure></li>
+<li>函数的参数列表中，,之后要有空格<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">def complex(real, imag):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">def complex(real,imag):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure></li>
+<li>函数的参数列表中，默认值等号两边不要添加空格<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">def complex(real, imag=0.0):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">def complex(real, imag = 0.0):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure></li>
+<li>左括号之后，右括号之前不要加多余的空格<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">spam(ham[1], &#123;eggs: 2&#125;)</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">spam( ham[1], &#123; eggs : 2 &#125; )</span><br></pre></td></tr></table></figure></li>
+<li>字典对象的左括号之前不要多余的空格<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">dict[&#x27;key&#x27;] = list[index]</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">dict [&#x27;key&#x27;] = list [index]</span><br></pre></td></tr></table></figure></li>
+<li>不要为对齐赋值语句而使用的额外空格<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">x = 1</span><br><span class="line">y = 2</span><br><span class="line">long_variable = 3</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">x             = 1</span><br><span class="line">y             = 2</span><br><span class="line">long_variable = 3</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h3><p>Python 支持括号内的换行。这时有两种情况。</p>
+<ul>
+<li>第二行缩进到括号的起始处<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo = long_function_name(var_one, var_two,</span><br><span class="line">                         var_three, var_four)</span><br></pre></td></tr></table></figure></li>
+<li>第二行缩进 4 个空格，适用于起始括号就换行的情形<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def long_function_name(</span><br><span class="line">        var_one, var_two, var_three,</span><br><span class="line">        var_four):</span><br><span class="line">    print(var_one)</span><br></pre></td></tr></table></figure></li>
+<li>使用反斜杠\换行，二元运算符+ .等应出现在行末；长字符串也可以用此法换行<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">session.query(MyTable).\</span><br><span class="line">        filter_by(id=1).\</span><br><span class="line">        one()</span><br><span class="line"></span><br><span class="line">print &#x27;Hello, &#x27;\</span><br><span class="line">      &#x27;%s %s!&#x27; %\</span><br><span class="line">      (&#x27;Harry&#x27;, &#x27;Potter&#x27;)</span><br></pre></td></tr></table></figure></li>
+<li>禁止复合语句，即一行中包含多个语句：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">do_first()</span><br><span class="line">do_second()</span><br><span class="line">do_third()</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">do_first();do_second();do_third();</span><br></pre></td></tr></table></figure></li>
+<li>if&#x2F;for&#x2F;while一定要换行：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">if foo == &#x27;blah&#x27;:</span><br><span class="line">    do_blah_thing()</span><br><span class="line"></span><br><span class="line"># 不推荐的写法</span><br><span class="line">if foo == &#x27;blah&#x27;: do_blash_thing()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="docstring"><a href="#docstring" class="headerlink" title="docstring"></a>docstring</h3><p>docstring 的规范中最其本的两点：</p>
+<ul>
+<li>所有的公共模块、函数、类、方法，都应该写 docstring 。私有方法不一定需要，但应该在 def 后提供一个块注释来说明。</li>
+<li>docstring 的结束”””应该独占一行，除非此 docstring 只有一行。<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&quot;&quot;&quot;Return a foobar</span><br><span class="line">Optional plotz says to frobnicate the bizbaz first.</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">&quot;&quot;&quot;Oneline docstring&quot;&quot;&quot;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><h3 id="块注释"><a href="#块注释" class="headerlink" title="块注释"></a>块注释</h3><ul>
+<li>“#”号后空一格，段落件用空行分开（同样需要“#”号）<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 块注释</span><br><span class="line"># 块注释</span><br><span class="line">#</span><br><span class="line"># 块注释</span><br><span class="line"># 块注释</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="行注释"><a href="#行注释" class="headerlink" title="行注释"></a>行注释</h3><ul>
+<li>至少使用两个空格和语句分开，注意不要使用无意义的注释<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 正确的写法</span><br><span class="line">x = x + 1  # 边框加粗一个像素</span><br><span class="line"></span><br><span class="line"># 不推荐的写法(无意义的注释)</span><br><span class="line">x = x + 1 # x加1</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h3><ul>
+<li>在代码的关键部分(或比较复杂的地方), 能写注释的要尽量写注释</li>
+<li>比较重要的注释段, 使用多个等号隔开, 可以更加醒目, 突出重要性<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app = create_app(name, options)</span><br><span class="line"></span><br><span class="line"># =====================================</span><br><span class="line"># 请勿在此处添加 get post等app路由行为 !!!</span><br><span class="line"># =====================================</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="文档注释（Docstring）"><a href="#文档注释（Docstring）" class="headerlink" title="文档注释（Docstring）"></a>文档注释（Docstring）</h3><p>作为文档的Docstring一般出现在模块头部、函数和类的头部，这样在python中可以通过对象的__doc__对象获取文档.<br>编辑器和IDE也可以根据Docstring给出自动提示.<br>文档注释以 “”” 开头和结尾, 首行不换行, 如多行末行必换行. </p>
+<ul>
+<li>以下是Google的docstring风格示例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">&quot;&quot;&quot;Example docstrings.</span><br><span class="line"></span><br><span class="line">This module demonstrates documentation as specified by the `Google Python</span><br><span class="line">Style Guide`_. Docstrings may extend over multiple lines. Sections are created</span><br><span class="line">with a section header and a colon followed by a block of indented text.</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">    Examples can be given using either the ``Example`` or ``Examples``</span><br><span class="line">    sections. Sections support any reStructuredText formatting, including</span><br><span class="line">    literal blocks::</span><br><span class="line"></span><br><span class="line">        $ python example_google.py</span><br><span class="line"></span><br><span class="line">Section breaks are created by resuming unindented text. Section breaks</span><br><span class="line">are also implicitly created anytime a new section starts.</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure></li>
+<li>不要在文档注释复制函数定义原型, 而是具体描述其具体内容, 解释具体参数和返回值等<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#  正确的写法</span><br><span class="line">def function(a, b):</span><br><span class="line">    &quot;&quot;&quot;计算并返回a到b范围内数据的平均值&quot;&quot;&quot;</span><br><span class="line">    ... ...</span><br><span class="line"></span><br><span class="line">#  不推荐的写法(不要写函数原型等废话)</span><br><span class="line">def function(a, b):</span><br><span class="line">    &quot;&quot;&quot;function(a, b) -&gt; list&quot;&quot;&quot;</span><br><span class="line">    ... ...</span><br></pre></td></tr></table></figure></li>
+<li>对函数参数、返回值等的说明采用numpy标准, 如下所示<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">def func(arg1, arg2):</span><br><span class="line">    &quot;&quot;&quot;在这里写函数的一句话总结(如: 计算平均值).</span><br><span class="line"></span><br><span class="line">    这里是具体描述.</span><br><span class="line"></span><br><span class="line">    参数</span><br><span class="line">    ----------</span><br><span class="line">    arg1 : int</span><br><span class="line">        arg1的具体描述</span><br><span class="line">    arg2 : int</span><br><span class="line">        arg2的具体描述</span><br><span class="line"></span><br><span class="line">    返回值</span><br><span class="line">    -------</span><br><span class="line">    int</span><br><span class="line">        返回值的具体描述</span><br><span class="line"></span><br><span class="line">    参看</span><br><span class="line">    --------</span><br><span class="line">    otherfunc : 其它关联函数等...</span><br><span class="line"></span><br><span class="line">    示例</span><br><span class="line">    --------</span><br><span class="line">    示例使用doctest格式, 在`&gt;&gt;&gt;`后的代码可以被文档测试工具作为测试用例自动运行</span><br><span class="line"></span><br><span class="line">    &gt;&gt;&gt; a=[1,2,3]</span><br><span class="line">    &gt;&gt;&gt; print [x + 3 for x in a]</span><br><span class="line">    [4, 5, 6]</span><br><span class="line">    &quot;&quot;&quot;</span><br></pre></td></tr></table></figure></li>
+<li>文档注释不限于中英文, 但不要中英文混用</li>
+<li>文档注释不是越长越好, 通常一两句话能把情况说清楚即可</li>
+<li>模块、公有类、公有方法, 能写文档注释的, 应该尽量写文档注释</li>
+</ul>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><h3 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h3><ul>
+<li>模块尽量使用小写命名，首字母保持小写，尽量不要用下划线<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 正确的模块名</span><br><span class="line">import decoder</span><br><span class="line">import html_parser</span><br><span class="line"></span><br><span class="line"># 不推荐的模块名</span><br><span class="line">import Decoder</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="类名"><a href="#类名" class="headerlink" title="类名"></a>类名</h3><ul>
+<li>类名使用驼峰(CamelCase)命名风格，首字母大写，私有类可用一个下划线开头<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Farm():</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class AnimalFarm(Farm):</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">class _PrivateFarm(Farm):</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure></li>
+<li>将相关的类和顶级函数放在同一个模块里. 不像Java, 没必要限制一个类一个模块.</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>函数名一律小写，如有多个单词，用下划线隔开<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def run():</span><br><span class="line">    pass</span><br><span class="line"></span><br><span class="line">def run_with_env():</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure></li>
+<li>私有函数在函数前加一个下划线_<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">class Person():</span><br><span class="line"></span><br><span class="line">    def _private_func():</span><br><span class="line">        pass</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h3><ul>
+<li>变量名尽量小写, 如有多个单词，用下划线隔开<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">    count = 0</span><br><span class="line">    school_name = &#x27;&#x27;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><ul>
+<li>常量采用全大写，如有多个单词，使用下划线隔开<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MAX_CLIENT = 100</span><br><span class="line">MAX_CONNECTION = 1000</span><br><span class="line">CONNECTION_TIMEOUT = 600</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xyzlxw.github.io/2026/04/15/PythonStyleGuide/" data-id="cmnzmsheu0004fmjeeflpaj7q" data-title="Python 代码规范" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2026/04/15/notepadplusplus-plugin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">Notepad++常用插件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Kategorien</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/document/">document</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/stocks/">stocks</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/">软件工程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/finance/" rel="tag">finance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/finance/" style="font-size: 20px;">finance</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 10px;">设计模式</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/04/">四月 2026</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2026/04/15/PythonStyleGuide/">Python 代码规范</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/notepadplusplus-plugin/">Notepad++常用插件</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/github-hexo-blog/">使用GitHub和Hexo写博客</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/Fund-005644-2018/">基金005644</a>
+          </li>
+        
+          <li>
+            <a href="/2026/04/15/DesignPattern-Singleton/">单件 (SINGLETON)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2026 外大武<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
